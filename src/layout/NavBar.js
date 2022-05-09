@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 function NavBar() {
   return (
     <div className="pageContainer">
-      <Navbar fixed="top" variant="dark" bg="dark" expand="lg" className="navigation">
+      <Navbar fixed="top" variant="dark" bg="dark" expand="lg" className="navigation" >
         <Container>
           <Navbar.Brand as={Link} to="/">
             RENT@BIKE
