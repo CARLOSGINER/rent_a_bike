@@ -1,9 +1,8 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <div className="pageContainer">
       <Navbar fixed="top" variant="dark" bg="dark" expand="lg" className="navigation" >
         <Container>
           <Navbar.Brand as={Link} to="/">
@@ -25,10 +24,6 @@ function NavBar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <main className="mainSection">
-        <Outlet />
-      </main>
-    </div>
   );
 }
 
