@@ -1,6 +1,11 @@
+import CatalogueCard from "../components/CatalogueCard";
 
 export default function Catalogue() {
   return (
-    <div>Catalogue</div>
+    <section className="catalogue__container">
+      <CatalogueCard />
+      <CatalogueCard />
+      <CatalogueCard />
+    </section>
   )
 }
