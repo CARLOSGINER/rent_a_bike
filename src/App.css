@@ -56,19 +56,6 @@ body .navigation .container {
     gap: 2em;
 }
 
-.card {
-    flex-direction: row;
-    width: 100%;
-}
-
-.card-body {
-    padding: 1rem 6rem;
-}
-
-.card-img-top {
-    width: 221px;
-    margin-left: 2em;
-}
 
 @media only screen and (max-width: 991.98px) {
     .pageContainer{
@@ -95,52 +82,15 @@ body .navigation .container {
         flex-direction: row;
         height: 100%;
     }
-    .card-text p {
-        font-size: 10px;
-    }
+
     .catalogue__container {
         position: static;
         margin-top: 5em;
     }
-    .card-img-top {
-        width: 204px;
-        height: 196px;
-    }
-    .card-body {
-        padding: 0.5em 1em 0.5em 2em;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .card-img-top {
-        width: 176px;
-    }
-    .card-text p {
-        font-size: 10px;
-    }
-
-    .card-body {
-        padding: 1em 2em;
-    }
 }
 
 @media only screen and  (max-width: 575px) {
-    .card {
-        flex-direction: column;
-        justify-content: center;
-        width: 90%;
-    }
-    .card-img-top{
-        margin: 0px;
-    }
     .catalogue__container {
         justify-content: center;
-    }
-}
-
-@media only screen and (max-width: 350px ){
-    .card-img-top{
-        width: 135px;
-        height: 134px;
     }
 }
