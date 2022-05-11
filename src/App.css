@@ -1,43 +1,6 @@
+/* General styles */
+
 body { 
     overflow-x: hidden;
 }
-
-.pageContainer {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    max-width: 2350px;
-    margin: auto;
-    display: block;
-}
-
-.mainSection {
-    background-color: whitesmoke;
-    color: cadetblue;
-    min-height: 100vh;
-    height: 100%;
-    width: 85%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 0px;
-    overflow-y: auto;
-}
-
-@media only screen and (max-width: 991.98px) {
-    .pageContainer{
-        flex-direction: column;
-        height: 100%;
-    }
-    .pageContainer .mainSection{
-        width: 100vw;
-        position: absolute;
-        top: 0px;
-        align-items: flex-start;
-    }
-}
-
 
