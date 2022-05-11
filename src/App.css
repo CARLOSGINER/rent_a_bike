@@ -27,17 +27,6 @@ body {
     overflow-y: auto;
 }
 
-.catalogue__container {
-    position: absolute;
-    top: 0px;
-    margin-top: 2em;
-    width: 85%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-}
-
-
 @media only screen and (max-width: 991.98px) {
     .pageContainer{
         flex-direction: column;
@@ -49,14 +38,6 @@ body {
         top: 0px;
         align-items: flex-start;
     }
-    .catalogue__container {
-        position: static;
-        margin-top: 5em;
-    }
 }
 
-@media only screen and  (max-width: 575px) {
-    .catalogue__container {
-        justify-content: center;
-    }
-}
+

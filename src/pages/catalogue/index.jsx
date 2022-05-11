@@ -1,4 +1,5 @@
-import CatalogueCard from "../components/CatalogueCard";
+import CatalogueCard from "../../components/CatalogueCard";
+import './catalogue.css';
 
 export default function Catalogue() {
   return (
