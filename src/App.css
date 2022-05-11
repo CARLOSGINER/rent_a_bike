@@ -13,25 +13,6 @@ body {
     display: block;
 }
 
-.navigation {
-    width: 15%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-body .navigation .links {
-    flex-direction: column;
-    transform: translate(-6px, -279px);
-}
-
-body .navigation .container {
-    height: 95vh;
-    flex-direction: column;
-}
-
-
 .mainSection {
     background-color: whitesmoke;
     color: cadetblue;
@@ -68,21 +49,6 @@ body .navigation .container {
         top: 0px;
         align-items: flex-start;
     }
-    .navigation {
-        width: 100vw;
-        height: 100%;
-        position: sticky;
-        top: 0;
-        left: 0;
-    }
-    body .navigation .links {
-        transform: translate(0px, 0px);
-    }
-    body .navigation .container {
-        flex-direction: row;
-        height: 100%;
-    }
-
     .catalogue__container {
         position: static;
         margin-top: 5em;

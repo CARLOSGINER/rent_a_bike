@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import './CatalogueCard.css'
+import './catalogueCard.css'
 
 export default function CatalogueCard() {
   return (

@@ -1,5 +1,6 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './navBar.css'
 
 function NavBar() {
   return (

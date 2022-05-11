@@ -1,0 +1,35 @@
+
+.navigation {
+    width: 15%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body .navigation .links {
+    flex-direction: column;
+    transform: translate(-6px, -279px);
+}
+
+body .navigation .container {
+    height: 95vh;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .navigation {
+        width: 100vw;
+        height: 100%;
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+    body .navigation .links {
+        transform: translate(0px, 0px);
+    }
+    body .navigation .container {
+        flex-direction: row;
+        height: 100%;
+    }
+}
