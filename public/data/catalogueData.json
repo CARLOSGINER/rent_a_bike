@@ -1,0 +1,74 @@
+{
+    "Bikes": [
+        {
+            "code":"MB001",
+            "model":"Vitus Black",
+            "type":"Modern Bike",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
+            "img_url":"bike_modern_01.jpg"
+        },
+        {
+            "code":"EB001",
+            "model":"Yadea Silver",
+            "type":"Electric Bike",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
+            "img_url":"bike_electric_01.jpg"
+        },
+        {
+            "code":"OLD001",
+            "model":"Vintage Green",
+            "type":"Old Bike",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
+            "img_url":"bike_old_01.jpg"
+        },
+        {
+            "code":"MB002",
+            "model":"Hiland White",
+            "type":"Modern Bike",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
+            "img_url":"bike_modern_02.jpg"
+        },
+        {
+            "code":"EB002",
+            "model":"Life Force",
+            "type":"Electric Bike",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
+            "img_url":"bike_electric_02.png"
+        },
+        {
+            "code":"OLD002",
+            "model":"Vitus Gold",
+            "type":"Old Bike",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
+            "img_url":"bike_old_02.jpg"
+        },
+        {
+            "code":"MB003",
+            "model":"Sava Chrome",
+            "type":"Modern Bike",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
+            "img_url":"bike_modern_03.jpg"
+        },
+        {
+            "code":"EB003",
+            "model":"Ancheer White",
+            "type":"Electric Bike",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
+            "img_url":"bike_electric_03.jpg"
+        },
+        {
+            "code":"OLD003",
+            "model":"Classic Red",
+            "type":"Old Bike",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
+            "img_url":"bike_old_03.jpg"
+        },
+        {
+            "code":"OLD004",
+            "model":"Classic White",
+            "type":"Old Bike",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
+            "img_url":"bike_old_04.png"
+        }
+    ]
+}

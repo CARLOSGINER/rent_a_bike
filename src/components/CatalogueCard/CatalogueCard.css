@@ -12,7 +12,9 @@
     height: 221px;
     margin-left: 2em;
 }
-
+.card-text p {
+    font-size: 14px;
+}
 @media only screen and (max-width: 991.98px) {
     .card-text p {
         font-size: 10px;

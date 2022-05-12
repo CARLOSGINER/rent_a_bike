@@ -1,16 +1,16 @@
 import Card from 'react-bootstrap/Card';
 import './catalogueCard.css'
 
-export default function CatalogueCard() {
+export default function CatalogueCard({title, type, price, description, imgUrl}) {
   return (
     <Card >
-      <Card.Img variant="top" src="img/bike_electric.jpg" />
+      <Card.Img variant="top" src={`img/${imgUrl}`} />
       <Card.Body>
-        <Card.Title>Bike Title</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Text as="section" >
-          <p>Price/day: <span>10$</span></p>
-          <p>Description: <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.</span></p>
-          <p>Available:<span>3</span></p>
+          <p><span>Type: </span>{type}</p>
+          <p><span>Description: </span>{description}</p>
+          <p><span>Available: </span>1</p>
         </Card.Text>
       </Card.Body>
     </Card>
