@@ -16,32 +16,30 @@ export default function Catalogue() {
   },[dispatch])
 
   const initData = useSelector((state)=>state.catalogue.data)
-
-  const { Bikes } = initData;
-
-  const [filteredData, setFilteredData] = useState(Bikes)
+  
+  const [filteredData, setFilteredData] = useState(null)
 
   const handleChange = (e) => {
-    const result = FilterData.selectionOnly( Bikes, "type", e.target.value )
+    const result = FilterData.selectionOnly( initData.Bikes, "type", e.target.value )
     result.length === 0 ?
-    setFilteredData(Bikes) :
+    setFilteredData(initData.Bikes) :
     setFilteredData(result);
   }
 
   return (
     <section className="catalogue__container">
-      {filteredData ? (
+      {initData ? (
         <>
           <div className="catalogue_header">
             <Title text="Bikes Catalogue" />
-            <Form.Select onChange={(e) => handleChange(e)}>
+            <Form.Select className="input_select" onChange={(e) => handleChange(e)}>
               <option>See All</option>
-              {FilterData.oneOfEachKind(Bikes, "type").map(type => (
-                <option>{type}</option>
+              {FilterData.oneOfEachKind(initData.Bikes, "type").map((type,index) => (
+                <option key={index}>{type}</option>
               ))}
             </Form.Select>
           </div>
-          {filteredData.map((card) => (
+          {(filteredData ? filteredData : initData.Bikes).map((card) => (
             <CatalogueCard
               key={card.code}
               title={card.model}
