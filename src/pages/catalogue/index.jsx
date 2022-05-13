@@ -3,7 +3,7 @@ import './catalogue.css';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getCatalogueData } from "../../redux/catalogue/actions";
-
+import Title from '../../components/Title';
 export default function Catalogue() {
 
   const dispatch = useDispatch();
@@ -15,8 +15,11 @@ export default function Catalogue() {
 
   return (
     <section className="catalogue__container">
-      {data ? data.Bikes.map(card =>
-        <CatalogueCard 
+      {data ?
+      <>
+        <Title text="Bikes Catalogue"/> 
+        {data.Bikes.map(card => (
+          <CatalogueCard 
           key={card.code}
           title={card.model}
           type={card.type}
@@ -24,7 +27,9 @@ export default function Catalogue() {
           description={card.description}
           imgUrl={card.img_url}
         />
-      ): <p>loading...</p>}
+        ))}
+      </>
+      : <p>loading...</p>}
     </section>
   )
 }
