@@ -17,6 +17,11 @@ body .navigation .container {
     flex-direction: column;
 }
 
+.icon_bike {
+    width: 34px;
+    height: 34px;
+}
+
 @media only screen and (max-width: 991.98px) {
     .navigation {
         width: 100vw;

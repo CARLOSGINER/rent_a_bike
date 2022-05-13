@@ -8,7 +8,7 @@ function NavBar() {
       <Navbar fixed="top" variant="dark" bg="dark" expand="lg" className="navigation" >
         <Container>
           <Navbar.Brand as={Link} to="/">
-            RENT <MdDirectionsBike/> BIKE
+            RENT <MdDirectionsBike className="icon_bike"/> BIKE
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
