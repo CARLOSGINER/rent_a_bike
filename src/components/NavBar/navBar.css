@@ -9,7 +9,6 @@
 
 body .navigation .links {
     flex-direction: column;
-    transform: translate(-6px, -279px);
 }
 
 body .navigation .container {
