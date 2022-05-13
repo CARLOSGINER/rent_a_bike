@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getCatalogueData } from "../../redux/catalogue/actions";
 import Title from '../../components/Title';
-import {Form} from 'react-bootstrap';
+import {Form, Spinner} from 'react-bootstrap';
 import { FilterData } from "../../utils/filterData";
 
 export default function Catalogue() {
@@ -28,7 +28,7 @@ export default function Catalogue() {
 
   return (
     <section className="catalogue__container">
-      {initData ? (
+      {initData === false ? (
         <>
           <div className="catalogue_header">
             <Title text="Bikes Catalogue" />
@@ -51,7 +51,9 @@ export default function Catalogue() {
           ))}
         </>
       ) : (
-        <p>loading...</p>
+        <div className="spinner_container">
+          <Spinner animation="border" className="spinner"/>
+        </div>
       )}
     </section>
   );

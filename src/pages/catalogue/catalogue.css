@@ -19,6 +19,18 @@
     width: 200px;
 }
 
+.spinner_container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    color: cadetblue;
+}
+
 @media only screen and (max-width: 991.98px) {
     .catalogue__container {
         position: static;
