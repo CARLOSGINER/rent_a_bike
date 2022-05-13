@@ -28,7 +28,7 @@ export default function Catalogue() {
 
   return (
     <section className="catalogue__container">
-      {initData === false ? (
+      {initData ? (
         <>
           <div className="catalogue_header">
             <Title text="Bikes Catalogue" />
