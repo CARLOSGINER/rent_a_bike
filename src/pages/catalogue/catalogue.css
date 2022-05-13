@@ -8,6 +8,17 @@
     gap: 2em;
 }
 
+.catalogue_header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form_select {
+    width: 200px;
+}
+
 @media only screen and (max-width: 991.98px) {
     .catalogue__container {
         position: static;
@@ -18,5 +29,8 @@
 @media only screen and  (max-width: 575px) {
     .catalogue__container {
         justify-content: center;
+    }
+    .catalogue_header {
+        flex-direction: column;
     }
 }

@@ -1,13 +1,14 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './navBar.css'
+import { MdDirectionsBike } from "react-icons/md";
 
 function NavBar() {
   return (
       <Navbar fixed="top" variant="dark" bg="dark" expand="lg" className="navigation" >
         <Container>
           <Navbar.Brand as={Link} to="/">
-            RENT@BIKE
+            RENT <MdDirectionsBike/> BIKE
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
