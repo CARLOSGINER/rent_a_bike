@@ -1,0 +1,35 @@
+.rental_container {
+    width: 85%;
+    height: 90%;
+}
+
+.rental_table {
+    margin-top: 1em;
+}
+
+.rental_header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rental_header-button {
+    height: 40px;
+}
+
+@media only screen and (max-width: 992px) {
+    .rental_container {
+        margin-top: 95px;
+    }
+} 
+
+@media only screen and (max-width: 575px) {
+    .rental_table {
+        font-size: 10px;
+    }
+    .rental_header-button {
+        height: 31px;
+        font-size: 12px;
+    }
+}

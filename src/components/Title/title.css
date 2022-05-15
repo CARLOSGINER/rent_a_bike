@@ -3,3 +3,9 @@
     font-size: 29px;
     color: rgb(75, 75, 75);
 }
+
+@media only screen and (max-width: 570px) {
+    .title {
+        font-size: 26px;
+    }
+}
