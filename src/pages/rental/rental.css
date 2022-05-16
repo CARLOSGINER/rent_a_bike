@@ -16,8 +16,30 @@
 
 .rental_header-button {
     height: 40px;
+    background-color: cadetblue;
+    border-color: cadetblue;
 }
 
+.rental_header-button:hover {
+    background-color: rgb(110, 199, 202);
+    border-color: rgb(110, 199, 202);
+}
+
+.rental_header-button:focus {
+    border: 0px solid cadetblue;
+    background-color: cadetblue;
+}
+
+.offcanvas-start {
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    border-right: 1px solid rgba(0,0,0,.2);
+}
+
+.offcanvas.show {
+    transform: translate(-50%, -50%);
+}
 @media only screen and (max-width: 992px) {
     .rental_container {
         margin-top: 95px;
