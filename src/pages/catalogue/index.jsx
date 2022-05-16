@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getCatalogueData } from "../../redux/catalogue/actions";
 import Title from '../../components/Title';
-import {Form, Spinner} from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import { FilterData } from "../../utils/filterData";
+import SelectInput from "../../components/SelectInput";
 
 export default function Catalogue() {
 
@@ -32,12 +33,10 @@ export default function Catalogue() {
         <>
           <div className="catalogue_header">
             <Title text="Bikes Catalogue" />
-            <Form.Select className="input_select" onChange={(e) => handleChange(e)}>
-              <option>See All</option>
-              {FilterData.oneOfEachKind(initData.Bikes, "type").map((type,index) => (
-                <option key={index}>{type}</option>
-              ))}
-            </Form.Select>
+            <SelectInput
+              handleChange={handleChange}
+              data={initData.Bikes}
+            />
           </div>
           {(filteredData ? filteredData : initData.Bikes).map((card) => (
             <CatalogueCard
