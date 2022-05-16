@@ -40,6 +40,36 @@
 .offcanvas.show {
     transform: translate(-50%, -50%);
 }
+
+.offcanvas-header {
+    padding-bottom: 0px;
+}
+
+.form_select {
+    width: 100%;
+}
+
+.form-label {
+    margin-top: 10px;
+    font-size: 14px;
+    color: gray;
+}
+
+.form-text {
+    color: cadetblue;
+    font-weight: 500;
+    font-family: monospace;
+    font-size: 1.2rem;
+    padding-top: 2rem;
+    position: absolute;
+}
+
+.form_total {
+    font-weight: 500;
+    color: cadetblue;
+    font-family: monospace;
+}
+
 @media only screen and (max-width: 992px) {
     .rental_container {
         margin-top: 95px;

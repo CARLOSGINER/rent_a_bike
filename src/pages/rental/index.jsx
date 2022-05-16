@@ -2,14 +2,38 @@ import { Table, Button, Offcanvas, Form } from "react-bootstrap";
 import Title from "../../components/Title";
 import { useState } from "react";
 import "./rental.css";
+import SelectInput from "../../components/SelectInput";
+import { useDispatch, useSelector } from "react-redux";
+import { getCatalogueData } from "../../redux/catalogue/actions";
 
 export default function Rental() {
 
-  const [show, setShow] = useState(false)
+  const dispatch = useDispatch();
 
-  
+  const [show, setShow] = useState(false);
+  const [type, setType] = useState("");
+  const [name, setName] = useState("");
+  const [days, setDays] = useState(0)
+
+  const handleInputSelect = (e) => {
+    setType(e.target.value);
+  };
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleDaysChange =(e)=> {
+    setDays(e.target.value);
+  }
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+  const handleShow = () => {
+    dispatch(getCatalogueData());
+    setShow(true);
+  };
+
+  const initData = useSelector((state) => state.catalogue.data);
 
   return (
     <>
@@ -51,17 +75,29 @@ export default function Rental() {
           </tbody>
         </Table>
       </div>
-      <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>New Rental</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="Client name" />
-          </Form.Group>
-        </Offcanvas.Body>
-      </Offcanvas>
+      {initData && (
+        <Offcanvas show={show} onHide={handleClose}>
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>New Rental</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Form.Group className="mb-3">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" onChange={(e)=>handleNameChange(e)} value={name}/>
+              <Form.Label>Bike Type</Form.Label>
+              <SelectInput
+                data={initData.Bikes}
+                handleChange={handleInputSelect}
+                className="form_select"
+              />
+              <Form.Label>Days</Form.Label>
+              <Form.Control type="text"  onChange={(e)=>handleDaysChange(e)} value={days}/>
+              <Form.Label>Total Cost:</Form.Label>
+              <Form.Control className="form_total" type="text"  value={'10$'} disabled/>
+            </Form.Group>
+          </Offcanvas.Body>
+        </Offcanvas>
+      )}
     </>
   );
 }

@@ -27,6 +27,10 @@
     color: cadetblue;
 }
 
+.catalogue_select{
+    width: 200px;
+}
+
 @media only screen and (max-width: 991.98px) {
     .catalogue__container {
         position: static;
@@ -41,5 +45,8 @@
     .catalogue_header {
         flex-direction: column;
         align-items: center;
+    }    
+    .catalogue_select{
+        width: 90%;
     }
 }

@@ -36,6 +36,8 @@ export default function Catalogue() {
             <SelectInput
               handleChange={handleChange}
               data={initData.Bikes}
+              className="catalogue_select"
+              defaultOption="See All"
             />
           </div>
           {(filteredData ? filteredData : initData.Bikes).map((card) => (
