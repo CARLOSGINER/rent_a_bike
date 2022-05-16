@@ -3,7 +3,7 @@
         {
             "code":"MB001",
             "model":"Vitus Black",
-            "type":"Modern Bike",
+            "type":"Normal Bike",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
             "img_url":"bike_modern_01.jpg"
         },
@@ -24,7 +24,7 @@
         {
             "code":"MB002",
             "model":"Hiland White",
-            "type":"Modern Bike",
+            "type":"Normal Bike",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
             "img_url":"bike_modern_02.jpg"
         },
@@ -45,7 +45,7 @@
         {
             "code":"MB003",
             "model":"Sava Chrome",
-            "type":"Modern Bike",
+            "type":"Normal Bike",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo consectetur iure beatae reiciendis voluptatibus. Illum incidunt saepe enim, accusantium exercitationem quos voluptatum sapiente tempore nam assumenda maiores, quod ad.",
             "img_url":"bike_modern_03.jpg"
         },
