@@ -1,39 +1,56 @@
-import { Table, Button, Offcanvas, Form } from "react-bootstrap";
+import { Table, Button, Offcanvas, Form, Placeholder, Card } from "react-bootstrap";
 import Title from "../../components/Title";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./rental.css";
 import SelectInput from "../../components/SelectInput";
 import { useDispatch, useSelector } from "react-redux";
-import { getCatalogueData } from "../../redux/catalogue/actions";
+import { calculateTotal, openNewRental } from "../../redux/rental/actions";
 
 export default function Rental() {
 
   const dispatch = useDispatch();
 
-  const [show, setShow] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [showPlaceholder, setShowPlaceholder] = useState(false);
   const [type, setType] = useState("");
   const [name, setName] = useState("");
-  const [days, setDays] = useState(0)
+  const [days, setDays] = useState("")
 
   const handleInputSelect = (e) => {
     setType(e.target.value);
   };
+
+  useEffect(()=>{
+    if(type && days) {
+      dispatch(calculateTotal({ type, days }))
+    }
+  },[type, days, dispatch])
 
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
 
   const handleDaysChange =(e)=> {
-    setDays(e.target.value);
+    const daysEntered = e.target.value
+    if (daysEntered >= 1 ) {
+      setDays(daysEntered);
+    } else {
+      setDays("");
+    }
   }
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShowPlaceholder(false);
+    setShowForm(false)
+  };
 
   const handleShow = () => {
-    dispatch(getCatalogueData());
-    setShow(true);
+    setShowPlaceholder(true);
+    setShowForm(true);
+    dispatch(openNewRental());
   };
 
   const initData = useSelector((state) => state.catalogue.data);
+  const formTotal = useSelector((state)=> state.rental.formTotal);
 
   return (
     <>
@@ -75,8 +92,8 @@ export default function Rental() {
           </tbody>
         </Table>
       </div>
-      {initData && (
-        <Offcanvas show={show} onHide={handleClose}>
+      {initData &&
+          <Offcanvas show={showForm && initData} onHide={handleClose}>
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>New Rental</Offcanvas.Title>
           </Offcanvas.Header>
@@ -89,15 +106,41 @@ export default function Rental() {
                 data={initData.Bikes}
                 handleChange={handleInputSelect}
                 className="form_select"
+                value={type}
               />
               <Form.Label>Days</Form.Label>
               <Form.Control type="text"  onChange={(e)=>handleDaysChange(e)} value={days}/>
-              <Form.Label>Total Cost:</Form.Label>
-              <Form.Control className="form_total" type="text"  value={'10$'} disabled/>
+              <Form.Label>
+                Total Cost:
+                {formTotal ? 
+                  <Form.Text>
+                    {`First ${formTotal.base_price_max_days} days (${formTotal.base_price}$) 
+                    + Extra ${formTotal.extraDays <= 0 ? "0" : formTotal.extraDays} days (${formTotal.extraDaysCost}$)`}
+                  </Form.Text>
+                : <Form.Text>Fill form to calculate totals...</Form.Text> 
+                } 
+
+              </Form.Label>
+              <Form.Control className="form_total" type="text"  value={`${formTotal ? formTotal.total : '0'}$`} disabled/>
+              <Button className="rental_button">Submit</Button>
             </Form.Group>
           </Offcanvas.Body>
         </Offcanvas>
-      )}
+      }
+      <Offcanvas show={!initData && showPlaceholder}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>New Rental</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body className='ph_body'>
+          <Placeholder as={Card.Text} animation="glow">
+            <Placeholder xs={12} className='ph_input'/> {" "}
+            <Placeholder xs={12} className='ph_input'/> {" "}
+            <Placeholder xs={12} className='ph_input'/> {" "}
+            <Placeholder xs={12} className='ph_input'/> {" "}
+          </Placeholder>
+          <Placeholder.Button  xs={12} />
+        </Offcanvas.Body>
+      </Offcanvas>
     </>
   );
 }

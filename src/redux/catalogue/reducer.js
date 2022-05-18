@@ -1,6 +1,6 @@
 import {SET_DATA} from './types';
 
-export default function reducer (state = {}, action)  {
+export default function catalogueReducer (state = {}, action)  {
     switch (action.type) {
         case SET_DATA:
             return {

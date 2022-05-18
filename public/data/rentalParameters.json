@@ -1,0 +1,22 @@
+{
+    "Parameters": [
+        {
+            "type": "Normal Bike",
+            "base_price":"4",
+            "base_price_max_days":"3",
+            "client_bonus":"1"
+        },
+        {
+            "type": "Old Bike",
+            "base_price":"2",
+            "base_price_max_days":"5",
+            "client_bonus":"1"
+        },
+        {
+            "type": "Electric Bike",
+            "base_price":"6",
+            "base_price_max_days":"1",
+            "client_bonus":"2"
+        }
+    ]
+}

@@ -2,7 +2,8 @@ import { put, takeLatest } from "redux-saga/effects";
 import {GET_DATA, SET_DATA} from '../catalogue/types'; 
 import DataApi from "../../api/data";
 
-function* getCatalogueData() {
+
+export function* getCatalogueData() {
     try{
         const response = yield DataApi.getData('../../data/catalogueData.json')
         yield put({
