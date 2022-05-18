@@ -5,6 +5,7 @@ import "./rental.css";
 import SelectInput from "../../components/SelectInput";
 import { useDispatch, useSelector } from "react-redux";
 import { calculateTotal, openNewRental } from "../../redux/rental/actions";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export default function Rental() {
 
@@ -49,8 +50,21 @@ export default function Rental() {
     dispatch(openNewRental());
   };
 
+  const handleSubmit = () => {
+    setShowForm(false);
+    setShowPlaceholder(false);
+    setClients({
+      clientName:name,
+      bikeType: type,
+      rentalDays: days,
+      total: formTotal.total
+    })
+  }
+
   const initData = useSelector((state) => state.catalogue.data);
   const formTotal = useSelector((state)=> state.rental.formTotal);
+
+  const [clients, setClients] = useLocalStorage('clients',[]);
 
   return (
     <>
@@ -68,6 +82,7 @@ export default function Rental() {
               <th>CLient</th>
               <th>Bike Type</th>
               <th>Rental Days</th>
+              <th>Total</th>
             </tr>
           </thead>
           <tbody>
@@ -122,7 +137,7 @@ export default function Rental() {
 
               </Form.Label>
               <Form.Control className="form_total" type="text"  value={`${formTotal ? formTotal.total : '0'}$`} disabled/>
-              <Button className="rental_button">Submit</Button>
+              <Button onClick={handleSubmit} className="rental_button">Submit</Button>
             </Form.Group>
           </Offcanvas.Body>
         </Offcanvas>
