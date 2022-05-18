@@ -1,5 +1,5 @@
 import { FilterData } from "../../utils/filterData";
-import { CALCULATE_TOTAL, SET_PARAMETERS } from "./types";
+import { CALCULATE_TOTAL, RESET_TOTAL, SET_PARAMETERS } from "./types";
 import { Operation } from "../../utils/operation";
 
 export default function rentalReducer(state={}, action) {
@@ -25,6 +25,11 @@ export default function rentalReducer(state={}, action) {
                     base_price_max_days,
                     extraDays
                 }
+            }
+        case RESET_TOTAL: 
+            return {
+                ...state,
+                formTotal: {}
             }
         default: 
             return state;
