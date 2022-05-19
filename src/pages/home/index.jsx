@@ -1,6 +1,6 @@
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <div>Welcome! Have a look at our catalog</div>
   )
 }
