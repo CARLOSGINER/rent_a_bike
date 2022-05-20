@@ -7,6 +7,7 @@ import Title from '../../components/Title';
 import { Spinner } from 'react-bootstrap';
 import { FilterData } from "../../utils/filterData";
 import SelectInput from "../../components/SelectInput";
+import { useTranslation } from 'react-i18next'
 
 export default function Catalogue() {
 
@@ -27,12 +28,14 @@ export default function Catalogue() {
     setFilteredData(result);
   }
 
+  const {t} = useTranslation("global");
+
   return (
     <section className="catalogue__container">
       {initData ? (
         <>
           <div className="catalogue_header">
-            <Title text="Bikes Catalogue" />
+            <Title text={t("catalogue.title")} />
             <SelectInput
               handleChange={handleChange}
               data={initData.Bikes}
@@ -48,6 +51,7 @@ export default function Catalogue() {
               price={card.price}
               description={card.description}
               imgUrl={card.img_url}
+              t={t}
             />
           ))}
         </>

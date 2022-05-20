@@ -1,5 +1,49 @@
 {
     "home": {
         "greetings": "Bienvenido! Echa un vistazo a nuestro catálogo"
-    } 
+    },
+    "nav": {
+        "home": "Inicio",
+        "catalogue": "Catálogo",
+        "rental": "Alquileres"
+    },
+    "catalogue": {
+        "title": "Catálogo de Bicicletas",
+        "type": "Tipo: ",
+        "description": "Descripción: ",
+        "available": "Disponible: "
+    },
+    "rental": {
+        "tableHeader": {
+            "date": "Fecha",
+            "client": "Cliente",
+            "bikeType": "Tipo de Bicicleta",
+            "days": "Días",
+            "total": "Total",
+            "bonus": "Bonificación"
+        },
+        "title": "Historial de Alquileres",
+        "button": "Nuevo alquiler",
+        "form": {
+            "title": "Nuevo Alquiler",
+            "name": "Nombre",
+            "bikeType": "Tipo",
+            "days": "Días",
+            "totalCost": "Costo Total",
+            "resultText": {
+                "placeholder": "Faltan campos por llenar...",
+                "firstDay": "Primer día ",
+                "firstDay_other": "Primeros {{count}} días ",
+                "extraDay": " + {{count}} día extra ",
+                "extraDay_other": " + {{count}} días extra ",
+                "extraDay_zero": ""
+            },
+            "button": "Registrar",
+            "error" : {
+                "title": "oh oh !",
+                "text": "Campos vacíos 🤔 Revisa de nuevo"
+            }
+        }
+    }
+
 }

@@ -6,6 +6,7 @@ import SelectInput from "../../components/SelectInput";
 import { useDispatch, useSelector } from "react-redux";
 import { calculateTotal, openNewRental, resetTotal } from "../../redux/rental/actions";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { useTranslation } from "react-i18next";
 
 
 export default function Rental() {
@@ -82,24 +83,26 @@ export default function Rental() {
 
   const [clients, setClients] = useLocalStorage('clients',[]);
 
+  const {t} = useTranslation("global");
+
   return (
     <>
       <div className="rental_container">
         <div className="rental_header">
-          <Title text="Rental Log" />
+          <Title text={t("rental.title")} />
           <Button onClick={handleShow} className="rental_header-button">
-            New Rental
+            {t("rental.button")}
           </Button>
         </div>
         <Table striped bordered className="rental_table">
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Client</th>
-              <th>Bike Type</th>
-              <th>Days</th>
-              <th>Total</th>
-              <th>Bonus</th>
+              <th>{t("rental.tableHeader.date")}</th>
+              <th>{t("rental.tableHeader.client")}</th>
+              <th>{t("rental.tableHeader.bikeType")}</th>
+              <th>{t("rental.tableHeader.days")}</th>
+              <th>{t("rental.tableHeader.total")}</th>
+              <th>{t("rental.tableHeader.bonus")}</th>
             </tr>
           </thead>
           <tbody>
@@ -119,42 +122,40 @@ export default function Rental() {
       {initData && (
         <Offcanvas show={showForm && initData} onHide={handleClose}>
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title>New Rental</Offcanvas.Title>
+            <Offcanvas.Title>{t("rental.form.title")}</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Form.Group className="mb-3">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>{t("rental.form.name")}</Form.Label>
               <Form.Control
                 type="text"
                 onChange={(e) => handleNameChange(e)}
                 value={name}
               />
-              <Form.Label>Bike Type</Form.Label>
+              <Form.Label>{t("rental.form.bikeType")}</Form.Label>
               <SelectInput
                 data={initData.Bikes}
                 handleChange={handleInputSelect}
                 className="form_select"
                 value={type}
               />
-              <Form.Label>Days</Form.Label>
+              <Form.Label>{t("rental.form.days")}</Form.Label>
               <Form.Control
                 type="text"
                 onChange={(e) => handleDaysChange(e)}
                 value={days}
               />
               <Form.Label>
-                Total Cost:
+              {t("rental.form.totalCost")}
                 {formTotal?.total ? (
                   <Form.Text>
-                    {`First ${formTotal.base_price_max_days} days (${
-                      formTotal.base_price
-                    }$) 
-                    + Extra ${
-                      formTotal.extraDays <= 0 ? "0" : formTotal.extraDays
-                    } days (${formTotal.extraDaysCost}$)`}
+                    {t("rental.form.resultText.firstDay", {count: parseInt(formTotal.base_price_max_days)})}
+                    {`(${formTotal.base_price}$)`}
+                    {t("rental.form.resultText.extraDay", {count: formTotal.extraDays <= 0 ? 0 : parseInt(formTotal.extraDays) })}
+                    {formTotal.extraDays <= 0 ? "" : `(${formTotal.extraDaysCost}$)`}
                   </Form.Text>
                 ) : (
-                  <Form.Text>Fill form to calculate totals...</Form.Text>
+                  <Form.Text>{t("rental.form.resultText.placeholder")}</Form.Text>
                 )}
               </Form.Label>
               <Form.Control
@@ -164,7 +165,7 @@ export default function Rental() {
                 disabled
               />
               <Button onClick={handleSubmit} className="rental_button">
-                Submit
+                {t("rental.form.button")}
               </Button>
               <Overlay
                 show={showError}
@@ -173,9 +174,9 @@ export default function Rental() {
                 containerPadding={20}
               >
                 <Popover id="popover-contained">
-                  <Popover.Header as="h3">Oh oh !</Popover.Header>
+                  <Popover.Header as="h3">{t("rental.form.error.title")}</Popover.Header>
                   <Popover.Body>
-                    Empty form fields 🤔 Please check
+                  {t("rental.form.error.text")}
                   </Popover.Body>
                 </Popover>
               </Overlay>
@@ -185,7 +186,7 @@ export default function Rental() {
       )}
       <Offcanvas show={!initData && showPlaceholder}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>New Rental</Offcanvas.Title>
+          <Offcanvas.Title>{t("rental.form.title")}</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="ph_body">
           <Placeholder as={Card.Text} animation="glow">

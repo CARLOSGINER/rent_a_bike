@@ -1,5 +1,48 @@
 {
     "home": {
         "greetings": "Welcome! Have a look at our catalog"
-    } 
+    }, 
+    "nav": {
+        "home": "Home",
+        "catalogue": "Catalogue",
+        "rental": "Rental"
+    },
+    "catalogue": {
+        "title": "Bikes Catalogue",
+        "type": "Type: ",
+        "description": "Description: ",
+        "available": "Available: "
+    },
+    "rental": {
+        "tableHeader": {
+            "date": "Date",
+            "client": "Client",
+            "bikeType": "Bike Type",
+            "days": "Days",
+            "total": "Total",
+            "bonus": "Bonus"
+        },
+        "title": "Rental Log",
+        "button": "New Rental",
+        "form": {
+            "title": "New Rental",
+            "name": "Name",
+            "bikeType": "Bike Type",
+            "days": "Days",
+            "totalCost": "Total Cost",
+            "resultText": {
+                "placeholder": "Missing fields to complete...",
+                "firstDay": "First day ",
+                "firstDay_other": "First {{count}} days ",
+                "extraDay": " + {{count}} extra day ",
+                "extraDay_other": " + {{count}} extra days ",
+                "extraDay_zero": ""
+            },
+            "button": "Register",
+            "error" : {
+                "title": "oh oh !",
+                "text": "Empty form fields 🤔 Please check"
+            }
+        }
+    }
 }
