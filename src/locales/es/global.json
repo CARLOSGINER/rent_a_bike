@@ -20,10 +20,10 @@
             "bikeType": "Tipo de Bicicleta",
             "days": "Días",
             "total": "Total",
-            "bonus": "Bonificación"
+            "bonus": "Bono"
         },
         "title": "Historial de Alquileres",
-        "button": "Nuevo alquiler",
+        "button": "Nuevo",
         "form": {
             "title": "Nuevo Alquiler",
             "name": "Nombre",
