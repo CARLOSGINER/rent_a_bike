@@ -66,7 +66,8 @@ export default function Rental() {
       clientName:name,
       bikeType: type,
       rentalDays: days,
-      total: formTotal.total
+      total: formTotal.total,
+      bonus: formTotal.client_bonus
     })
     setName("");
     setType("");
@@ -109,6 +110,7 @@ export default function Rental() {
                 <td>{client.bikeType}</td>
                 <td>{client.rentalDays}</td>
                 <td>{client.total}$</td>
+                <td>{client.bonus}</td>
               </tr>
             ))}
           </tbody>

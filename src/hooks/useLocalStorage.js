@@ -16,7 +16,7 @@ export function useLocalStorage(key, initialValue) {
     }, [storedValue, key])
     
 
-    const setValue = ({clientName, bikeType, rentalDays, total}) => {
+    const setValue = ({clientName, bikeType, rentalDays, total, bonus}) => {
         try {
             const date = new Date().toLocaleString()
             setStoredValue((prev)=> [...prev, {
@@ -24,7 +24,8 @@ export function useLocalStorage(key, initialValue) {
                 clientName,
                 bikeType,
                 rentalDays,
-                total
+                total,
+                bonus
             }]);
         } catch (error) {
             console.error(error);

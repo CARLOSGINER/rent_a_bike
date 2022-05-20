@@ -12,7 +12,7 @@ export default function rentalReducer(state={}, action) {
         case CALCULATE_TOTAL:
             const { type: selectedType, days } = action.formData;
             const parameter = FilterData.selectionOnly( state.data.Parameters, "type", selectedType);
-            const {base_price, base_price_max_days} = parameter[0];
+            const {base_price, base_price_max_days, client_bonus} = parameter[0];
             const total = Operation.multiplyConditionally(parseInt(base_price), days, parseInt(base_price_max_days) );
             const extraDaysCost = total - parseInt(base_price)
             const extraDays = parseInt(days) - parseInt(base_price_max_days);
@@ -23,7 +23,8 @@ export default function rentalReducer(state={}, action) {
                     extraDaysCost,
                     base_price,
                     base_price_max_days,
-                    extraDays
+                    extraDays,
+                    client_bonus
                 }
             }
         case RESET_TOTAL: 
