@@ -21,6 +21,17 @@ body .navigation .container {
     height: 34px;
 }
 
+.navbar-collapse {
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.navbar-nav {
+    flex-grow: 1;
+    justify-content: center;
+}
+
 @media only screen and (max-width: 991.98px) {
     .navigation {
         width: 100vw;

@@ -2,6 +2,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './navBar.css'
 import { MdDirectionsBike } from "react-icons/md";
+import LanguageSelector from '../LanguageSelector';
 
 function NavBar() {
   return (
@@ -23,6 +24,7 @@ function NavBar() {
                 Rental
               </Nav.Link>
             </Nav>
+           <LanguageSelector/>
           </Navbar.Collapse>
         </Container>
       </Navbar>

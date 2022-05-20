@@ -1,0 +1,21 @@
+
+.languageSelector-button {
+    border:none;
+    background:none ;
+    color: gray;
+}
+
+.languageSelector-button:hover {
+    color: white;
+}
+
+.languageSelector-separator{
+    color: gray;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .languageSelector-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

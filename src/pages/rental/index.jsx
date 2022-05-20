@@ -94,10 +94,11 @@ export default function Rental() {
           <thead>
             <tr>
               <th>Date</th>
-              <th>CLient</th>
+              <th>Client</th>
               <th>Bike Type</th>
-              <th>Rental Days</th>
+              <th>Days</th>
               <th>Total</th>
+              <th>Bonus</th>
             </tr>
           </thead>
           <tbody>
