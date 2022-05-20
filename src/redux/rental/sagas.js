@@ -18,8 +18,8 @@ function* getRentalParameters() {
 
 function* openRentalForm() {
     try{
-        yield call(getCatalogueData);
         yield call(getRentalParameters);
+        yield call(getCatalogueData);
     } catch (error) {
         console.log(error);
     }
