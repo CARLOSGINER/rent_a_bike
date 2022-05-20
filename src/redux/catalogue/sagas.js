@@ -5,7 +5,7 @@ import DataApi from "../../api/data";
 
 export function* getCatalogueData() {
     try{
-        const response = yield DataApi.getData('../../data/catalogueData.json')
+        const response = yield DataApi.getData(`${process.env.PUBLIC_URL}/data/catalogueData.json`)
         yield put({
             type: SET_DATA,
             data: response.data,

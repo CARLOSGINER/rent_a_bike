@@ -4,7 +4,7 @@ import './catalogueCard.css'
 export default function CatalogueCard({title, type, description, imgUrl, t}) {
   return (
     <Card >
-      <Card.Img variant="top" src={`img/${imgUrl}`} />
+      <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/img/${imgUrl}`}/>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text as="section" >

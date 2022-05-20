@@ -6,7 +6,7 @@ import { getCatalogueData } from '../catalogue/sagas';
 
 function* getRentalParameters() {
     try {
-        const response = yield DataApi.getData('../../data/rentalParameters.json')
+        const response = yield DataApi.getData(`${process.env.PUBLIC_URL}/data/rentalParameters.json`)
         yield put ({
             type: SET_PARAMETERS,
             parameters: response.data
