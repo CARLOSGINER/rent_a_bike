@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GROWPRO_TEST/static/css/main.833d8358.css",
+    "main.js": "/GROWPRO_TEST/static/js/main.be6e6a60.js",
+    "index.html": "/GROWPRO_TEST/index.html",
+    "main.833d8358.css.map": "/GROWPRO_TEST/static/css/main.833d8358.css.map",
+    "main.be6e6a60.js.map": "/GROWPRO_TEST/static/js/main.be6e6a60.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.833d8358.css",
+    "static/js/main.be6e6a60.js"
+  ]
+}
