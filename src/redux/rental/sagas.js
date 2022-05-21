@@ -6,7 +6,7 @@ import { getCatalogueData } from '../catalogue/sagas';
 
 function* getRentalParameters() {
     try {
-        const response = yield DataApi.getData('/data/rentalParameters.json')
+        const response = yield DataApi.getData('https://raw.githubusercontent.com/CARLOSGINER/rent_a_bike/master/public/data/rentalParameters.json')
         yield put ({
             type: SET_PARAMETERS,
             parameters: response.data
