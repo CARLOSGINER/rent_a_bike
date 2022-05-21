@@ -93,6 +93,12 @@
     height: 33px;
 }
 
+.form-spinner {
+    width: 20px;
+    height: 20px;
+    margin-left: 72px;
+}
+
 @media only screen and (max-width: 992px) {
     .rental_container {
         margin-top: 95px;

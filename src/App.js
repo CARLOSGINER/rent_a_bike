@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import  { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import  { HashRouter, Routes, Route, Navigate} from 'react-router-dom';
 import Dashboard from './layout/dashboard';
 import Home from './pages/home';
 import Catalogue from './pages/catalogue';
@@ -10,7 +10,7 @@ import Rental from './pages/rental';
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Dashboard/>}>
             <Route index element={<Home/>}/>
@@ -19,7 +19,7 @@ function App() {
             <Route path="*" element={<Navigate replace to="/"/>}/>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

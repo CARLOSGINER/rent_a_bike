@@ -42,7 +42,8 @@
             "error" : {
                 "title": "oh oh !",
                 "text": "Empty form fields 🤔 Please check"
-            }
+            },
+            "loading": "Retrieving data from server..."
         }
     }
 }

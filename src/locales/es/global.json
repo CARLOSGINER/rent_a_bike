@@ -42,7 +42,8 @@
             "error" : {
                 "title": "oh oh !",
                 "text": "Campos vacíos 🤔 Revisa de nuevo"
-            }
+            },
+            "loading": "Recuperando datos del servidor..."
         }
     }
 

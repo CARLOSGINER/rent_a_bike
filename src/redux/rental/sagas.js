@@ -1,4 +1,4 @@
-import { put, takeLatest, call } from 'redux-saga/effects';
+import { put, takeLatest, call, delay } from 'redux-saga/effects';
 import { OPEN_FORM_RENTAL, SET_PARAMETERS } from './types';
 import DataApi from "../../api/data";
 import { getCatalogueData } from '../catalogue/sagas';
@@ -18,8 +18,10 @@ function* getRentalParameters() {
 
 function* openRentalForm() {
     try{
-        yield call(getRentalParameters);
         yield call(getCatalogueData);
+        yield delay(5000) //Simulating possible slow response from server to retrieve the parameters
+        yield call(getRentalParameters);
+
     } catch (error) {
         console.log(error);
     }

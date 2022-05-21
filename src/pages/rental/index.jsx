@@ -1,4 +1,4 @@
-import { Table, Button, Offcanvas, Form, Placeholder, Card, Overlay, Popover } from "react-bootstrap";
+import { Table, Button, Offcanvas, Form, Placeholder, Card, Overlay, Popover, Spinner } from "react-bootstrap";
 import Title from "../../components/Title";
 import { useEffect, useState } from "react";
 import "./rental.css";
@@ -10,6 +10,10 @@ import { useTranslation } from "react-i18next";
 
 
 export default function Rental() {
+
+  const initData = useSelector((state) => state.catalogue.data);
+  const formTotal = useSelector((state)=> state.rental.formTotal);
+  const rentalParameters = useSelector((state)=> state.rental?.data);
 
   const [target, setTarget] = useState(null);
   const [showError, setShowError] = useState(false)
@@ -27,10 +31,10 @@ export default function Rental() {
   };
 
   useEffect(()=>{
-    if(type && days) {
+    if(type && days && rentalParameters) {
       dispatch(calculateTotal({ type, days }))
     }
-  },[type, days, dispatch])
+  },[type, days, rentalParameters, dispatch])
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -77,9 +81,6 @@ export default function Rental() {
     setShowPlaceholder(false);
     dispatch(resetTotal())
   }
-
-  const initData = useSelector((state) => state.catalogue.data);
-  const formTotal = useSelector((state)=> state.rental.formTotal);
 
   const [clients, setClients] = useLocalStorage('clients',[]);
 
@@ -145,19 +146,29 @@ export default function Rental() {
                 onChange={(e) => handleDaysChange(e)}
                 value={days}
               />
-              <Form.Label>
-              {t("rental.form.totalCost")}
-                {formTotal?.total ? (
+              { rentalParameters ? 
+                <Form.Label>
+                {t("rental.form.totalCost")}
+                  {formTotal?.total ? (
+                    <Form.Text>
+                      {t("rental.form.resultText.firstDay", {count: parseInt(formTotal.base_price_max_days)})}
+                      {`(${formTotal.base_price}$)`}
+                      {t("rental.form.resultText.extraDay", {count: formTotal.extraDays <= 0 ? 0 : parseInt(formTotal.extraDays) })}
+                      {formTotal.extraDays <= 0 ? "" : `(${formTotal.extraDaysCost}$)`}
+                    </Form.Text>
+                  ) : (
+                    <Form.Text>{t("rental.form.resultText.placeholder")}</Form.Text>
+                  )}
+                </Form.Label>
+                : 
+                <Form.Label>
+                  {t("rental.form.totalCost")} 
                   <Form.Text>
-                    {t("rental.form.resultText.firstDay", {count: parseInt(formTotal.base_price_max_days)})}
-                    {`(${formTotal.base_price}$)`}
-                    {t("rental.form.resultText.extraDay", {count: formTotal.extraDays <= 0 ? 0 : parseInt(formTotal.extraDays) })}
-                    {formTotal.extraDays <= 0 ? "" : `(${formTotal.extraDaysCost}$)`}
-                  </Form.Text>
-                ) : (
-                  <Form.Text>{t("rental.form.resultText.placeholder")}</Form.Text>
-                )}
-              </Form.Label>
+                    {t("rental.form.loading")}                  
+                    <Spinner variant="primary" animation="grow" className="form-spinner"/>
+                  </Form.Text> 
+                </Form.Label>
+              }
               <Form.Control
                 className="form_total"
                 type="text"
@@ -184,7 +195,7 @@ export default function Rental() {
           </Offcanvas.Body>
         </Offcanvas>
       )}
-      <Offcanvas show={!initData && showPlaceholder}>
+      <Offcanvas show={!initData && showPlaceholder} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>{t("rental.form.title")}</Offcanvas.Title>
         </Offcanvas.Header>
