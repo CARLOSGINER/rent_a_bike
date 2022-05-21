@@ -1,6 +1,6 @@
 # RENT A BIKE APP
 
-:octocat: [View live App here!]()
+:octocat: [View live App here!](https://carlosginer.github.io/rent_a_bike/)
 
 
 > **AUTHOR**
@@ -24,5 +24,16 @@ The state management, was delegate to redux, in a classic folder structuring by 
 
 The goal was to make the structure as modularized as possible, to let the project scale, in an efficient way. Thats why I rely on util classes, customHooks, etc. All to achive a separation of concerns, and trying to follow SOLID principles.
 
+> **INSTALLATION IN LOCAL**
+
+Simply clone the repo. Then to install al the modules and dependencies, in the project directory do a :
+
+      npm install
+      
+and them start the server with :
+
+      npm run start
+      
+to access from youur browser in (https://localhost:3000)
 __________________________________________________________________________________________________________________________________________________________________________________
 Carlos Giner © copyright 2022
