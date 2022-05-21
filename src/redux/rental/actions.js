@@ -1,4 +1,4 @@
-import { CALCULATE_TOTAL, OPEN_FORM_RENTAL, RESET_TOTAL } from "./types"
+import { CALCULATE_TOTAL, OPEN_FORM_RENTAL, RESET_TOTAL, GET_RENTAL_PARAMETERS } from "./types"
 
 export const calculateTotal =(formData)=>{
     return {
@@ -16,5 +16,11 @@ export const resetTotal = () => {
 export const openNewRental = () => {
     return {
         type: OPEN_FORM_RENTAL,
+    }
+}
+
+export const getRentalParameters =()=> {
+    return {
+        type: GET_RENTAL_PARAMETERS,
     }
 }

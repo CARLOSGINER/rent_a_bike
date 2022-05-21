@@ -13,11 +13,13 @@ export default function Catalogue() {
 
   const dispatch = useDispatch();
 
-  useEffect(()=>{
-    dispatch(getCatalogueData())
-  },[dispatch])
-
   const initData = useSelector((state)=>state.catalogue.data)
+
+  useEffect(()=>{
+    if (!initData) {
+      dispatch(getCatalogueData())
+    }
+  },[initData, dispatch])
   
   const [filteredData, setFilteredData] = useState(null)
 

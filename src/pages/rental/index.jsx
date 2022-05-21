@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./rental.css";
 import SelectInput from "../../components/SelectInput";
 import { useDispatch, useSelector } from "react-redux";
-import { calculateTotal, openNewRental, resetTotal } from "../../redux/rental/actions";
+import { calculateTotal, openNewRental, resetTotal, getRentalParameters } from "../../redux/rental/actions";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useTranslation } from "react-i18next";
 
@@ -56,7 +56,11 @@ export default function Rental() {
   const handleShow = () => {
     setShowPlaceholder(true);
     setShowForm(true);
-    dispatch(openNewRental());
+    if (!rentalParameters && !initData) {
+      dispatch(openNewRental());
+    } else if (!rentalParameters) {
+      dispatch(getRentalParameters());
+    }
   };
 
   const handleSubmit = (e) => {
